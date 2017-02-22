@@ -1,0 +1,106 @@
+{
+    "name": "melon-layer",
+    "version": "1.0.0",
+    "description": "",
+    "main": "lib/index.js",
+    "directories": {
+        "test": "test"
+    },
+    "scripts": {
+        "test": "NODE_ENV=test karma start ./test/karma.local.conf.js",
+        "test-ci": "NODE_ENV=test karma start ./test/karma.ci.conf.js",
+        "build": "NODE_ENV=production gulp build"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/react-melon/melon-layer.git"
+    },
+    "author": "leon <ludafa@outlook.com>",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/react-melon/melon-layer/issues"
+    },
+    "homepage": "https://github.com/react-melon/melon-layer#readme",
+    "devDependencies": {
+        "react": "^15.4.2",
+        "react-dom": "^15.4.2",
+        "babel-istanbul": "^0.11.0",
+        "babel-loader": "^6.2.5",
+        "babel-plugin-external-helpers": "^6.8.0",
+        "babel-plugin-external-helpers-insert-require": "^1.0.0",
+        "babel-plugin-istanbul": "^3.0.0",
+        "babel-plugin-transform-es2015-modules-umd": "^6.12.0",
+        "babel-plugin-transform-es3-member-expression-literals": "^6.8.0",
+        "babel-plugin-transform-es3-property-literals": "^6.8.0",
+        "babel-plugin-transform-object-rest-spread": "^6.8.0",
+        "babel-preset-es2015": "^6.14.0",
+        "babel-preset-react": "^6.11.1",
+        "babel-preset-stage-2": "^6.13.0",
+        "coveralls": "^2.11.12",
+        "css-loader": "^0.24.0",
+        "enzyme": "^2.6.0",
+        "esdoc": "^0.4.8",
+        "esdoc-es7-plugin": "0.0.3",
+        "express": "^4.14.0",
+        "extract-text-webpack-plugin": "^1.0.1",
+        "fecs": "1.*",
+        "file-loader": "^0.9.0",
+        "gulp": "^3.9.1",
+        "gulp-babel": "^6.1.2",
+        "gulp-clean": "^0.3.2",
+        "gulp-sourcemaps": "^1.6.0",
+        "jasmine": "^2.4.1",
+        "json-loader": "^0.5.4",
+        "karma": "^1.2.0",
+        "karma-babel-preprocessor": "^6.0.1",
+        "karma-browserstack-launcher": "^1.1.1",
+        "karma-chrome-launcher": "^2.0.0",
+        "karma-coverage": "^1.1.1",
+        "karma-firefox-launcher": "^1.0.0",
+        "karma-jasmine": "^1.0.2",
+        "karma-sourcemap-loader": "^0.3.7",
+        "karma-webpack": "^1.8.0",
+        "react-addons-test-utils": "^0.14.8||^15.4.0",
+        "rimraf": "^2.5.4",
+        "watchify": "^3.7.0",
+        "webpack": "^1.13.1"
+    },
+    "babel": {
+        "env": {
+            "dev": {
+                "presets": [
+                    "es2015",
+                    "stage-2",
+                    "react"
+                ]
+            },
+            "test": {
+                "presets": [
+                    "es2015",
+                    "stage-2",
+                    "react"
+                ],
+                "plugins": [
+                    "istanbul"
+                ]
+            },
+            "production": {
+                "presets": [
+                    [
+                        "es2015",
+                        {
+                            "loose": true,
+                            "modules": "umd"
+                        }
+                    ],
+                    "stage-2",
+                    "react"
+                ],
+                "plugins": [
+                    "transform-es3-property-literals",
+                    "transform-es3-member-expression-literals"
+                ]
+            }
+        }
+    }
+}
