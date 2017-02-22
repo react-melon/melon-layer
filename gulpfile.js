@@ -16,6 +16,11 @@ gulp.task('babel', function () {
         .pipe(gulp.dest('lib'));
 });
 
-gulp.task('build', ['babel']);
+gulp.task('css', function () {
+    return gulp.src('src/**/*.css')
+        .pipe(gulp.dest('lib'));
+});
+
+gulp.task('build', ['babel', 'css']);
 
 gulp.task('rebuild', ['build']);
